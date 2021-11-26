@@ -5,11 +5,20 @@ import {getFirestore , collection , getDocs} from "firebase/firestore/lite"
 import { DateTime } from "luxon";
 import {Button} from "antd"
 import { useEffect, useState } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit , faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 function Item({article}){
     return(
-        <tr >
-            <th scope="row">{article.id}</th>
+        <tr className="border" >
+            <th scope="row" className="py-3 px-2">{article.id}</th>
+            <td className="pl-3">
+    
+            <a><FontAwesomeIcon icon={faEdit} className="fas fa-edit" size="lg" /> & </a>
+
+            <a><FontAwesomeIcon icon={faTrashAlt} className="fas fa-trash-alt" size="lg" /></a>
+
+            </td>
             <td>{article.name}</td>
             <td>{article.age}</td>
             <td>{article.live}</td>
@@ -49,14 +58,17 @@ export default function ArticleList(){
           <div className="container">
             <table className="table container text-justify">
                 <thead>
-                    <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                    <th scope="col">Handle</th>
-                    <th scope="col">Handle</th>
-                    <th scope="col">Handle</th>
+                    <tr className="border">
+                        <th scope="col" className="py-3 px-2">직원번호</th>
+                        <th scope="col">
+                            수정 & 변경
+                        </th>
+                        <th scope="col">이름</th>
+                        <th scope="col">나이</th>
+                        <th scope="col">거주지역</th>
+                        <th scope="col">부서</th>
+                        <th scope="col">연락처</th>
+                        <th scope="col">입사일자</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -67,7 +79,7 @@ export default function ArticleList(){
            
 
 
-            <div className="flex flex-row justify-end">
+            <div className="flex flex-row justify-end my-6">
                 <Link href="/articles/create" passHref>
                     <Button>직원정보 추가</Button>
                 </Link>

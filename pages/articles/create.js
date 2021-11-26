@@ -3,7 +3,7 @@ import {Form,Input,Button,Select,InputNumber,Option  } from 'antd';
 import firebaseApp from "../../net/firebaseApp";
 import {getFirestore , collection , addDoc} from "firebase/firestore/lite"
 import { useRouter } from "next/dist/client/router";
-
+import uid from 'tiny-uid';
 
 
 export default function Page(){
@@ -31,10 +31,10 @@ export default function Page(){
             const articles = collection(fireStore , 'articles');
             const AddDoc = await addDoc(articles , {
                 ...value,
+                id : uid(),
                 created_at : new Date(),
                 updated_at : new Date()
             })
-            console.log('AddDoc' , AddDoc)
             router.back();
         }}
       >

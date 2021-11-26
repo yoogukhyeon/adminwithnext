@@ -96,7 +96,7 @@ export default function BaseLayout({ children }) {
              
             <Link href="/portfolios" passHref>
                 <a style={{width: "100%"}}>
-                <Menu.Item key="2">option2</Menu.Item>
+                <Menu.Item key="2">썸네일게시판</Menu.Item>
                 </a>
             </Link>
              

@@ -43,11 +43,7 @@ export default function PortfolioList(){
             })).sort(( x , y) => x.created_at.seconds < y.created_at.seconds ? 1 : -1)
         )
           }
-          fetchData();
-
-
-      
-            
+          fetchData();  
     }, [])
     return(
         <BaseLayout>
