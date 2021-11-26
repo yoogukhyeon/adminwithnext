@@ -5,16 +5,16 @@ import { useEffect, useState } from "react";
 import firebaseApp from "../../net/firebaseApp";
 import {getFirestore , collection , getDocs} from "firebase/firestore/lite"
 import { DateTime } from "luxon";
-import Image from "next/image";
+
 function Item({portfolio}){
     return(
         <li className="flex flex-row justify-between items-center py-3 border-b" >
             <div>
-               {portfolio.thumbnail ?    <Image src={portfolio.thumbnail} alt="Image" className="max-w-16 max-h-16" /> : "이미지 없음"}
+               {portfolio.thumbnail ?    <img src={portfolio.thumbnail} alt="img" className="max-w-16 max-h-16" /> : "이미지 없음"}
               
             </div>
             <div>
-                <Link href={`/portfolios/${portfolio.id}`}>
+                <Link href={`/portfolios/${portfolio.id}`} passHref>
                     <a>
                         {portfolio.subject}
                     </a>

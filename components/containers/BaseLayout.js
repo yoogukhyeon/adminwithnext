@@ -18,7 +18,6 @@ export default function BaseLayout({ children }) {
 
 
     useEffect(() => {
-        
         auth.onAuthStateChanged(credential => {
             // TODO: 허용된 사용자만 로그인 유지 
             
