@@ -13,6 +13,7 @@ function Item({portfolio}){
                {portfolio.thumbnail ?    <img src={portfolio.thumbnail} alt="img" className="max-w-16 max-h-16" /> : "이미지 없음"}
               
             </div>
+         
             <div>
                 <Link href={`/portfolios/${portfolio.id}`} passHref>
                     <a>
