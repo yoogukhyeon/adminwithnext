@@ -8,7 +8,7 @@ import { useRouter } from "next/dist/client/router";
 import uid from 'tiny-uid';
 import { DateTime } from "luxon";
 import { useState } from "react";
-
+import Image from 'next/image'
 export default function PortfolioForm({id , portfolio}){
     const [form] = Form.useForm();
     const router = useRouter();
@@ -70,7 +70,7 @@ export default function PortfolioForm({id , portfolio}){
                         }}/>
 
                         {thumbnail && (
-                            <p className="mt-3"><img src={thumbnail} alt="image" style={{maxWidth: 200 , maxHeight: 200}} /></p>
+                            <p className="mt-3"><Image src={thumbnail} alt="Image" style={{maxWidth: 200 , maxHeight: 200}} /></p>
                         )}
 
 
@@ -107,7 +107,7 @@ export default function PortfolioForm({id , portfolio}){
                 </Form>
 
             <div className="flex flex-row justify-end">
-                <Link href="/portfolios">
+                <Link href="/portfolios" passHref>
                     <Button>뒤로가기</Button>
                 </Link>
             </div>

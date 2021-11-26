@@ -58,7 +58,7 @@ export default function PortfolioList(){
 
 
             <div className="flex flex-row justify-end">
-                <Link href="/portfolios/create">
+                <Link href="/portfolios/create" passHref>
                     <Button>추가</Button>
                 </Link>
             </div>
