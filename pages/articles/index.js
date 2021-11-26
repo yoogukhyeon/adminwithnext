@@ -8,7 +8,7 @@ import { useEffect, useState } from "react"
 
 function Item({article}){
     return(
-        <tr>
+        <tr >
             <th scope="row">{article.id}</th>
             <td>{article.name}</td>
             <td>{article.age}</td>
@@ -46,8 +46,8 @@ export default function ArticleList(){
     return(
         <BaseLayout>
             <h1>직원정보 crud</h1>
-      
-            <table class="table">
+          <div className="container">
+            <table className="table container text-justify">
                 <thead>
                     <tr>
                     <th scope="col">#</th>
@@ -63,7 +63,7 @@ export default function ArticleList(){
                     {articles.map(article => (<Item key={article.id} article={article} />))}
                 </tbody>
                 </table>
-
+            </div>
            
 
 
