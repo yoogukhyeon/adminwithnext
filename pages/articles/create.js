@@ -4,7 +4,7 @@ import firebaseApp from "../../net/firebaseApp";
 import {getFirestore , collection , addDoc} from "firebase/firestore/lite"
 import { useRouter } from "next/dist/client/router";
 import uid from 'tiny-uid';
-
+import Link from 'next/link'
 
 export default function Page(){
     const [form] = Form.useForm();
@@ -83,6 +83,9 @@ export default function Page(){
         </Form.Item>
 
         <div className="flex flex-row justify-center">
+                <Link href="/articles" passHref>
+                    <Button type="default" className="mr-3">뒤로가기</Button>
+                </Link>
             <Form.Item>
                 <Button type="primary" htmlType="submit">전송</Button>
             </Form.Item>
